@@ -1,15 +1,14 @@
 package com.vicky7230.kosten.di.module
 
 import android.content.Context
-import javax.inject.Singleton
-import dagger.Provides
-import com.vicky7230.kosten.di.BaseUrl
-import io.reactivex.disposables.CompositeDisposable
-import com.google.gson.Gson
 import com.vicky7230.kosten.KostenApplication
 import com.vicky7230.kosten.data.Config
 import com.vicky7230.kosten.di.ApplicationContext
+import com.vicky7230.kosten.di.BaseUrl
 import dagger.Module
+import dagger.Provides
+import io.reactivex.disposables.CompositeDisposable
+import javax.inject.Singleton
 
 
 /**
@@ -22,11 +21,6 @@ class ApplicationModule {
     @ApplicationContext
     internal fun provideContext(kostenApplication: KostenApplication): Context {
         return kostenApplication.getApplicationContext()
-    }
-
-    @Provides
-    internal fun provideGson(): Gson {
-        return Gson()
     }
 
     @Provides
