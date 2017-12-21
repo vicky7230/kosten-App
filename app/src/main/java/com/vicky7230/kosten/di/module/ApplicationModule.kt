@@ -3,11 +3,15 @@ package com.vicky7230.kosten.di.module
 import android.arch.persistence.room.Room
 import android.content.Context
 import com.vicky7230.kosten.KostenApplication
+import com.vicky7230.kosten.data.AppDataManager
 import com.vicky7230.kosten.data.Config
+import com.vicky7230.kosten.data.DataManager
 import com.vicky7230.kosten.data.db.AppDbHelper
 import com.vicky7230.kosten.data.db.room.AppDatabase
 import com.vicky7230.kosten.data.network.ApiHelper
 import com.vicky7230.kosten.data.network.AppApiHelper
+import com.vicky7230.kosten.data.prefs.AppPreferencesHelper
+import com.vicky7230.kosten.data.prefs.PreferencesHelper
 import com.vicky7230.kosten.di.ApplicationContext
 import com.vicky7230.kosten.di.BaseUrl
 import dagger.Module
@@ -25,7 +29,7 @@ class ApplicationModule {
     @Provides
     @ApplicationContext
     internal fun provideContext(kostenApplication: KostenApplication): Context {
-        return kostenApplication.getApplicationContext()
+        return kostenApplication.applicationContext
     }
 
     @Provides

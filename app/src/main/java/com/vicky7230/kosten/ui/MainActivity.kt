@@ -1,7 +1,8 @@
-package com.vicky7230.kosten
+package com.vicky7230.kosten.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.vicky7230.kosten.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -7,5 +7,6 @@ object Config {
 
     val BASE_URL: String = ""
     val DB_NAME : String = "expenses_db"
+    val NULL_TYPE: String = "null"
 
 }
