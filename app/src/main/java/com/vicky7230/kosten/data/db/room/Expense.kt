@@ -16,30 +16,30 @@ data class Expense(
         @Expose
         @PrimaryKey
         @ColumnInfo(name = "id")
-        val id: Int,
+        var id: Int = 0,
 
         @SerializedName("amount")
         @Expose
         @ColumnInfo(name = "amount")
-        val amount: String,
+        var amount: String = "",
 
         @SerializedName("description")
         @Expose
         @ColumnInfo(name = "description")
-        val description: String,
+        var description: String = "",
 
         @SerializedName("photo")
         @Expose
         @ColumnInfo(name = "photo")
-        val photo: String,
+        var photo: String = "",
 
         @SerializedName("createdAt")
         @Expose
         @ColumnInfo(name = "createdAt")
-        val createdAt: String,
+        var createdAt: String = "",
 
         @SerializedName("approved")
         @Expose
         @ColumnInfo(name = "approved")
-        val approved: Boolean
+        var approved: Boolean = false
 )

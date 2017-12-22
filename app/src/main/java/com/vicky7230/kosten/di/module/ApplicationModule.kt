@@ -1,5 +1,6 @@
 package com.vicky7230.kosten.di.module
 
+import android.app.Application
 import android.arch.persistence.room.Room
 import android.content.Context
 import com.vicky7230.kosten.KostenApplication
@@ -7,6 +8,7 @@ import com.vicky7230.kosten.data.AppDataManager
 import com.vicky7230.kosten.data.Config
 import com.vicky7230.kosten.data.DataManager
 import com.vicky7230.kosten.data.db.AppDbHelper
+import com.vicky7230.kosten.data.db.DbHelper
 import com.vicky7230.kosten.data.db.room.AppDatabase
 import com.vicky7230.kosten.data.network.ApiHelper
 import com.vicky7230.kosten.data.network.AppApiHelper
@@ -30,6 +32,11 @@ class ApplicationModule {
     @ApplicationContext
     internal fun provideContext(kostenApplication: KostenApplication): Context {
         return kostenApplication.applicationContext
+    }
+
+    @Provides
+    internal fun provideApplication(kostenApplication: KostenApplication): Application {
+        return kostenApplication
     }
 
     @Provides
@@ -57,7 +64,7 @@ class ApplicationModule {
 
     @Provides
     @Singleton
-    internal fun provideDbHelper(appDbHelper: AppDbHelper): AppDbHelper {
+    internal fun provideDbHelper(appDbHelper: AppDbHelper): DbHelper {
         return appDbHelper
     }
 

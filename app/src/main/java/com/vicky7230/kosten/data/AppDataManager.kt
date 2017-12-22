@@ -1,16 +1,22 @@
 package com.vicky7230.kosten.data
 
 import android.arch.lifecycle.LiveData
+import com.vicky7230.kosten.data.db.DbHelper
 import com.vicky7230.kosten.data.db.room.Expense
+import com.vicky7230.kosten.data.network.ApiHelper
 import com.vicky7230.kosten.data.network.model.CreateExpenseResponse
+import com.vicky7230.kosten.data.prefs.PreferencesHelper
 import io.reactivex.Observable
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import javax.inject.Inject
 
 /**
  * Created by vicky on 21/12/17.
  */
-class AppDataManager : DataManager {
+class AppDataManager @Inject
+constructor(val apiHelper: ApiHelper, val dbHelper: DbHelper, val preferencesHelper: PreferencesHelper) : DataManager {
+
     override fun getIsUserLoggedIn(): Boolean {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

@@ -7,7 +7,7 @@ import android.arch.persistence.room.RoomDatabase
 /**
  * Created by vicky on 20/12/17.
  */
-@Database(entities = arrayOf(Expense::class), version = 1, exportSchema = false)
+@Database(entities = [(Expense::class)], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun expenseDao(): ExpenseDao
 }

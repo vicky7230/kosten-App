@@ -11,7 +11,7 @@ import android.arch.persistence.room.Query
  */
 @Dao
 interface ExpenseDao {
-    @Query("SELECT * FROM user")
+    @Query("SELECT * FROM expenses")
     fun selectExpenses(): LiveData<MutableList<Expense>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
